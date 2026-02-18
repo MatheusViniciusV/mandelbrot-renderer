@@ -175,7 +175,7 @@ int CALLBACK WinMain(HINSTANCE instance, HINSTANCE prev_instance, LPSTR cmd_line
                             b32 is_down = ((message.lParam & (1 << 31)) == 0);
 
                             if (was_down != is_down) {
-                                KeyCode kc = Win32VKToKeyCode(vk_code);
+                                KeyId kc = Win32VKToKeyCode(vk_code);
                                 if (kc != KEY_COUNT) {
                                     Win32ProcessKeyboard(&input.keys[kc], is_down);
                                 }
@@ -232,4 +232,5 @@ int CALLBACK WinMain(HINSTANCE instance, HINSTANCE prev_instance, LPSTR cmd_line
     }
     
     return 0;
+
 }
